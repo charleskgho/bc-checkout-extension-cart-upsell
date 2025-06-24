@@ -1,0 +1,126 @@
+/* Container for the entire layout */
+.upsell-item-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Inner container for image and content */
+.upsell-item-content {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Image styling */
+.upsell-item-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Content container for text, select, and button */
+.upsell-item-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.upsell-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Text styling */
+.upsell-item-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+/* Container for button */
+.add-button-inline {
+    margin-left: 16px;
+}
+
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Container for select */
+.select-option-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px; /* space between select and input */
+    margin-bottom: 10px;
+}
+
+.select-option-container select,
+.select-option-container input[type="number"] {
+    width: 100%;
+}
+
+/* Dropdown select styling */
+select {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background-color: #fff;
+}
+
+/* Input field styling */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
