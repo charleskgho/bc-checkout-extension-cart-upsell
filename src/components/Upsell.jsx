@@ -7,15 +7,10 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
     const [shopperMessage, setShopperMessage] = useState('')
     const {extensionService, cartId } = useContext(ExtensionServiceContext)
 
-    //extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })
-    //console.log(extensionService)
-
-    function test() {
+    function testReload() {
         console.log(extensionService)
         extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })
     }
-
-    //test()
 
     useEffect(() => {
         // Call api to update the cart when the shopper clicks the 'Add' button
@@ -93,7 +88,7 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
                 />
             )}
             {shopperMessage !== '' && (<p>{shopperMessage}</p>)}
-            <button onClick={() => test()}>Reload Checkout</button>
+            <button onClick={() => testReload()}>Reload Checkout</button>
         </>
     )
 
