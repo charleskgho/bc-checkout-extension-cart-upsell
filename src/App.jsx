@@ -14,9 +14,9 @@ function App() {
   const [extensionService, setExtensionService] = useState(null)
 
   function testReload() {
-        console.log(extensionService)
-        extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })  
-    }
+    console.log(extensionService)
+    extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })  
+  }
 
   useEffect(() => {
     async function fetchExtension() {

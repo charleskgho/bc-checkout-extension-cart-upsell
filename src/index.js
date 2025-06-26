@@ -5,8 +5,8 @@ export const initiateExtension = () => {
     const params = new URL(document.location).searchParams;
     const extensionId = params.get('extensionId');
     const parentOrigin = params.get('parentOrigin');
-    //const cartId = params.get('cartId');
-    const cartId = '2c793329-d802-4e7d-9b31-0be7f9bca125'
+    const cartId = params.get('cartId');
+    //const cartId = '2c793329-d802-4e7d-9b31-0be7f9bca125'
     const extensionService = module.initializeExtensionService({
       extensionId,
       parentOrigin,
