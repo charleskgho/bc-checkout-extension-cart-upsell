@@ -13,10 +13,9 @@ function App() {
   const [allUpsell, setAllUpsell] = useState([]) // A list of all products upsold
   const [extensionService, setExtensionService] = useState(null)
 
-  function testReload() {
-    console.log(extensionService)
-    extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT'})
-  }
+  // function testReload() {
+  //   extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT'})
+  // }
 
   useEffect(() => {
     async function fetchExtension() {
@@ -52,7 +51,7 @@ function App() {
     <ExtensionServiceContext.Provider value={{extensionService, cartId}}>
       <div>
         <Upsell isGuest={true} productsOfferedForUpsell={productsOfferedForUpsell.current} upsell={upsell} allUpsell={allUpsell} addNewUpsell={addNewUpsell} updateAllUpsell={updateAllUpsell} />
-        <button onClick={() => testReload()}>Test Reload</button>
+        {/*<button onClick={() => testReload()}>Test Reload</button>*/}
       </div>
     </ExtensionServiceContext.Provider>
   )
