@@ -15,7 +15,7 @@ function App() {
 
   function testReload() {
     console.log(extensionService)
-    extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })  
+    extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT'})
   }
 
   useEffect(() => {
@@ -23,14 +23,12 @@ function App() {
       const value = await initiateExtension()
       setCartId(value.cartId)
       setExtensionService(value.extensionService)
-      console.log(value.extensionService)
     }
     fetchExtension()
-   
   }, [])
 
   offerProductsForUpsell()
-  console.log(`All upsells ${JSON.stringify(allUpsell)}`)
+  //console.log(`All upsells ${JSON.stringify(allUpsell)}`)
 
   // Call api to get the list of products for upselling
   function offerProductsForUpsell() {
@@ -54,7 +52,7 @@ function App() {
     <ExtensionServiceContext.Provider value={{extensionService, cartId}}>
       <div>
         <Upsell isGuest={true} productsOfferedForUpsell={productsOfferedForUpsell.current} upsell={upsell} allUpsell={allUpsell} addNewUpsell={addNewUpsell} updateAllUpsell={updateAllUpsell} />
-        <button onClick={() => testReload()}>Reload Checkout</button>
+        <button onClick={() => testReload()}>Test Reload</button>
       </div>
     </ExtensionServiceContext.Provider>
   )
