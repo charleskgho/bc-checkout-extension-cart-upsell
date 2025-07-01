@@ -62,8 +62,8 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
                 // Call Reload checkout
                 console.log('Reload Checkout')
                 console.log(extensionService)
-                //extensionService.post({ type: 'EXTENSION:SHOW_LOADING_INDICATOR', payload: { show: false }, })
-                //extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })
+                extensionService.post({ type: 'EXTENSION:SHOW_LOADING_INDICATOR', payload: { show: false }, })
+                extensionService.post({ type: 'EXTENSION:RELOAD_CHECKOUT' })
             })
         }
     }, [upsell])
