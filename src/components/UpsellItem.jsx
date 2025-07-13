@@ -103,14 +103,13 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
     return (   
         <div className="upsell-item-container">
             <div className="upsell-item-content">
-                <UpsellImage productId={id} className="upsell-item-image" />
+                <UpsellImage productId={id} />
                 <div className="upsell-item-details">
                     <div className="upsell-title-row">
-                        <div className="upsell-title-text">
+                        <div className="upsell-item-text">
                             {name} <br /> 
-                            ${price}
+                            <span className="upsell-item-price">${price}</span>
                         </div>
-                        <button className="add-button-inline" onClick={() => addNewUpsell(product)} onMouseUp={() => reset()}>Add</button>
                     </div>
                     
                     {/*
@@ -129,6 +128,8 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
                         ) : null}
 
                         <input type="number" inputmode="numeric" value={quantity} min="1" onChange={handleQuantityChange} />
+
+                        <button className="add-button-inline" onClick={() => addNewUpsell(product)} onMouseUp={() => reset()}>Add</button>
                     </div>
                 </div>
             </div>

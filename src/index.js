@@ -1,6 +1,5 @@
 
 export const initiateExtension = () => {
-  //checkoutKitLoader.load('extension').then(function (module) {
   return checkoutKitLoader.load('extension').then(async function (module) {
     const params = new URL(document.location).searchParams;
     const extensionId = params.get('extensionId');

@@ -28,7 +28,14 @@ function UpsellImage({productId}) {
 
     return (
         <>
-            {imageURL !== '' && <img src={imageURL} />} 
+             {/*
+                   
+                   
+            {imageURL !== '' && <img className="upsell-item-image" src={imageURL} />} 
+
+             */}
+
+             <img className="upsell-item-image" src={imageURL} />
         </>
     )
 }

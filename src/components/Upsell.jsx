@@ -65,12 +65,12 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
                     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
                     payload: { show: true }, 
                 })
-                // extensionService.post({ 
-                //     type: 'EXTENSION:RELOAD_CHECKOUT' 
-                // })
-                 extensionService.post({ 
-                    type: 'EXTENSION:RE_RENDER_SHIPPING_STEP' 
+                extensionService.post({ 
+                    type: 'EXTENSION:RELOAD_CHECKOUT' 
                 })
+                //  extensionService.post({ 
+                //     type: 'EXTENSION:RE_RENDER_SHIPPING_STEP' 
+                // })
                 extensionService.post({ 
                     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
                     payload: { show: false }, 
@@ -83,6 +83,7 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
         <>
             <div className="upsell-title-container">
                 <p className="upsell-title-text">You may also like these</p>
+                <p>Discover more styles that complement your taste</p>
             </div>
             {productsOfferedForUpsell.data.map(product => 
                 <UpsellItem 

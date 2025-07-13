@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Reset base font size (adjust as needed) */
+  line-height: 1.5; /* Reset line height */
+  background-color: #f9f9f9;
 }
 
 body {
-  margin: 0;
+  font-family: "Montserrat", "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }

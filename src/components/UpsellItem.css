@@ -16,10 +16,11 @@
 
 /* Image styling */
 .upsell-item-image {
-    width: 150px;
+    width: 100px;      /* Set to desired smaller width */
     height: auto;
     border-radius: 8px;
     margin-right: 20px;
+    object-fit: cover; /* Ensures the image scales nicely */
 }
 
 /* Content container for text, select, and button */
@@ -38,15 +39,18 @@
 
 /* Text styling */
 .upsell-item-text {
-    font-size: 18px;
-    font-weight: bold;
     color: #333;
     margin-bottom: 0;
 }
 
+.upsell-item-price {
+    color: #000000;
+    font-weight: bold
+}
+
 /* Container for button */
 .add-button-inline {
-    margin-left: 16px;
+    margin-left: 0; /* Remove left margin if you want tighter spacing */
 }
 
 
@@ -78,25 +82,32 @@ button:disabled {
 /* Container for select */
 .select-option-container {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px; /* space between select and input */
+    flex-direction: row;
+    align-items: center;
+    gap: 12px; /* space between elements */
     margin-bottom: 10px;
 }
 
 .select-option-container select,
 .select-option-container input[type="number"] {
-    width: 100%;
+    width: auto;
+    min-width: 120px;
+    height: 45px;         /* Match the select's height */
+    padding: 10px; 
+}
+
+.select-option-container input[type="number"] {
+    width: 60px; /* Set to your desired width */
+    min-width: 0;
+    padding: 4px 8px;
 }
 
 /* Dropdown select styling */
 select {
     flex: 1;
     padding: 10px;
-    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f9f9f9;
     font-size: 16px;
     color: #333;
     outline: none;
