@@ -4,11 +4,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Reset base font size (adjust as needed) */
+  font-size: 14px; /* Reset base font size (adjust as needed) */
   line-height: 1.5; /* Reset line height */
   background-color: #f9f9f9;
 }
 
 body {
   font-family: "Montserrat", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  padding: 15px;
 }
