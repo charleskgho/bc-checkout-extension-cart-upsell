@@ -56,7 +56,7 @@
 
 /* Button styling */
 button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -84,7 +84,7 @@ button:disabled {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px; /* space between elements */
+    gap: 8px; /* space between elements */
     margin-bottom: 10px;
 }
 
