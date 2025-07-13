@@ -51,7 +51,6 @@
 /* Container for button */
 .add-button-inline {
     margin-left: 0; /* Remove left margin if you want tighter spacing */
-    font-size: 14px; /* Set to your desired smaller size */
 }
 
 
@@ -62,7 +61,7 @@ button {
     color: #fff;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -93,9 +92,9 @@ button:disabled {
 .select-option-container input[type="number"] {
     width: auto;
     min-width: 120px;
-    height: 45px;         /* Match the select's height */
+    height: 40px;         /* Match the select's height */
     padding: 10px;
-    font-size: 14px; 
+    font-size: 12px; 
     font-family: "Montserrat", "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
