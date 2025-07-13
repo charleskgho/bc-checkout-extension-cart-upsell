@@ -12,4 +12,5 @@
 body {
   font-family: "Montserrat", "Open Sans", "Helvetica Neue", Arial, sans-serif;
   padding: 15px;
+  border-radius: 10px;
 }
