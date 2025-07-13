@@ -118,7 +118,7 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
                     <div className="select-option-container">
                         {options.length > 0 ? (
                         <select name="variantId" value={selectedOption} defaultValue="" onChange={handleOptionSelect}>
-                            <option value="">Select option</option>
+                            <option value="">Select</option>
                             {options.map(option => {
                                 return (
                                     <option key={option.id} value={option.id}>{option.label}</option>
