@@ -62,21 +62,20 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
             fetchData().then(() => {
                 // Call Reload checkout
                 console.log('Reload Checkout')
-                // extensionService.post({ 
-                //     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
-                //     payload: { show: true }, 
-                // })
-                // extensionService.post({ 
-                //     type: 'EXTENSION:RELOAD_CHECKOUT' 
-                // })
+                extensionService.post({ 
+                    type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
+                    payload: { show: true }, 
+                })
+                extensionService.post({ 
+                    type: 'EXTENSION:RELOAD_CHECKOUT' 
+                })
                 //  extensionService.post({ 
                 //     type: 'EXTENSION:RE_RENDER_SHIPPING_STEP' 
                 // })
-                // extensionService.post({ 
-                //     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
-                //     payload: { show: false }, 
-                // })
-                //addNewUpsell({}) // Reset the upsell item after adding to cart
+                extensionService.post({ 
+                    type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
+                    payload: { show: false }, 
+                })
             })
         }
     }, [upsell])
