@@ -10,12 +10,13 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
     useEffect(() => {
         // Call api to update the cart when the shopper clicks the 'Add' button
         if (cartId) {
+            //console.log(upsell)
             const fetchData = async () => {
                 try {
                     // Check if the product has options     
                     if (upsell.hasOption) {
                         // No product option was selected
-                        if (upsell.variantId === undefined) {
+                        if (upsell.variantId === null) {
                             setShopperMessage(`Please select an option.`)
                             throw new Error(`No option was selected for product id: ${upsell.productId}`)
                         }
@@ -35,7 +36,7 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
                     if (!response.ok) {
                         const errorData = await response.json()
                         if (response.status === 422) {
-                            if (upsell.variantId === undefined) {
+                            if (upsell.variantId === null) {
                                 setShopperMessage(`Please select an option.`)
                             } else {
                                 // Out of stock message to show to the shopper
@@ -61,20 +62,21 @@ function Upsell({isGuest, productsOfferedForUpsell, upsell, addNewUpsell, allUps
             fetchData().then(() => {
                 // Call Reload checkout
                 console.log('Reload Checkout')
-                extensionService.post({ 
-                    type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
-                    payload: { show: true }, 
-                })
-                extensionService.post({ 
-                    type: 'EXTENSION:RELOAD_CHECKOUT' 
-                })
+                // extensionService.post({ 
+                //     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
+                //     payload: { show: true }, 
+                // })
+                // extensionService.post({ 
+                //     type: 'EXTENSION:RELOAD_CHECKOUT' 
+                // })
                 //  extensionService.post({ 
                 //     type: 'EXTENSION:RE_RENDER_SHIPPING_STEP' 
                 // })
-                extensionService.post({ 
-                    type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
-                    payload: { show: false }, 
-                })
+                // extensionService.post({ 
+                //     type: 'EXTENSION:SHOW_LOADING_INDICATOR', 
+                //     payload: { show: false }, 
+                // })
+                //addNewUpsell({}) // Reset the upsell item after adding to cart
             })
         }
     }, [upsell])

@@ -3,12 +3,12 @@ import UpsellImage from './UpsellImage'
 import './UpsellItem.css'
 
 export default function UpsellItem({id, name, price, addNewUpsell}) {
-    const [product, setProduct] = useState({productId: id, quantity: 1, hasOption: false})
+    const [product, setProduct] = useState({productId: id, quantity: 1, variantId: null, hasOption: false})
     const [options, setOptions] = useState([])
     const [quantity, setQuantity] = useState(1)
     const [selectedOption, setSelectedOption] = useState('')
    
-    // Array of product options [{id: variantId, label: labelName}]
+    // Format: [{id: variantId, label: labelName}]
     var newOptions = []
 
     useEffect(() => {
@@ -51,14 +51,8 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
         //const {name, value} = event.target
         const {value} = event.target
 
-        // User has selected a product option, pass-in the variantId
+        // Product option selected, set variantId
         if (value !== "") {
-            // setProduct({
-            //     productId: id,
-            //     variantId: value,
-            //     quantity: 1, 
-            //     hasOption: true
-            // })
             setProduct({
                 ...product, 
                 quantity: quantity,
@@ -68,12 +62,13 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
             setSelectedOption(value)
         }
 
-        // User has not selected a product option, no variantId
-        if (value === '') {
+        // Product option no selected, assign null to the variantId
+        if (value === '') {    
             setProduct({
                 ...product,
                 productId: id, 
                 quantity: quantity,
+                variantId: null,
                 hasOption: true
             })
         }
@@ -91,12 +86,15 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
         }
     }
 
+    // called after the user clicks on the Add button
     function reset() {
         setSelectedOption("")
         setQuantity(1)
         setProduct({
-            ...product, 
-            quantity: quantity
+            productId: id,
+            quantity: 1,
+            variantId: null,
+            hasOption: options.length > 0
         })
     }
     
@@ -126,10 +124,19 @@ export default function UpsellItem({id, name, price, addNewUpsell}) {
                             })}
                         </select>
                         ) : null}
-
+                       
                         <input type="number" inputmode="numeric" value={quantity} min="1" onChange={handleQuantityChange} />
 
-                        <button className="add-button-inline" onClick={() => addNewUpsell(product)} onMouseUp={() => reset()}>Add</button>
+                        {/*
+                        Trigger an event after the onClick event by using a callback function inside the onClick handler.
+                        */}
+
+                        <button className="add-button-inline" 
+                                onClick={() => {
+                                    addNewUpsell(product)
+                                    reset()
+                                }}
+                        >Add</button>
                     </div>
                 </div>
             </div>

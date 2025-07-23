@@ -9,7 +9,7 @@ export const ExtensionServiceContext = createContext()
 function App() {
   const productsOfferedForUpsell = useRef()
   const [cartId, setCartId] = useState(null) 
-  const [upsell, setUpsell] = useState({})  // Product upsold
+  const [upsell, setUpsell] = useState(null)  // Product upsold
   const [allUpsell, setAllUpsell] = useState([]) // A list of all products upsold
   const [extensionService, setExtensionService] = useState(null)
 
